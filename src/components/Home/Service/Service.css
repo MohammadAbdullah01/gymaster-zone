@@ -1,0 +1,90 @@
+.service {
+    background-color: #d9ceff;
+}
+
+.service-img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.service-container {
+    background-color: white;
+    width: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.service-container:hover .description {
+    left: 0;
+    top: 0;
+}
+
+.details-container {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    z-index: 10;
+    width: 90%;
+    clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
+    padding: 5px;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    background-color: #9876d3e7;
+    color: #6007dd;
+    margin: 15px 5px;
+    width: 97%;
+    padding: 5px;
+    transition: all 0.4s;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.price {
+    color: gray;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* From uiverse.io by @adamgiebl */
+.cssbuttons-io-button {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, #9f75ff 0%, #5a03d5 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #9f75ff;
+    letter-spacing: 0.05em;
+    border-radius: 15px;
+}
+
+.cssbuttons-io-button svg {
+    margin-right: 6px;
+}
+
+.cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #9f75ff;
+    background: linear-gradient(0deg, #5a03d5 0%, #9f75ff 100%);
+}
+
+.cssbuttons-io-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #843dff;
+}

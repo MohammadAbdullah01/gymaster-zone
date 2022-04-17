@@ -1,0 +1,4 @@
+.banner-img {
+    height: calc(100vh - 66px);
+    object-fit: cover;
+}
