@@ -1,0 +1,86 @@
+.login-container {
+    width: 70%;
+    margin: 10px auto;
+    min-height: 78vh;
+}
+
+.form-container {
+    box-shadow: 2px 2px 10px gray;
+    padding: 30px 15px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #523B3B;
+}
+
+.form-container input:not([type=submit]) {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.form-container .submit-btn {
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    background-color: #843dff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.form-container .submit-btn:hover {
+    background-color: #7916ff;
+}
+
+.form-or-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-or {
+    background-color: gray;
+    height: 1px;
+    width: 30%;
+}
+
+.social-btn {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    background-color: #843dff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.social-btn:hover {
+    background-color: #7916ff;
+}
+
+.social-btn img {
+    height: 30px;
+    margin-right: 5px;
+
+}
+
+@media only screen and (min-width: 992px) {
+    .login-container {
+        width: 30%;
+    }
+}

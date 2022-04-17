@@ -1,0 +1,33 @@
+.motivation {
+    background: rgba(0, 0, 0, 0.4) url('../../../../images/Others/fitness.jpg');
+    background-blend-mode: darken;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 70vh;
+    color: white;
+}
+
+.motivation-child {
+    padding: 30px 50px;
+}
+
+.motivation-child h1 {
+    font-weight: 900;
+}
+
+.motivation-btn {
+    border: 0;
+    border-radius: 30px;
+    background-color: #4F05B7;
+    padding: 15px 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}

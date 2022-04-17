@@ -1,5 +1,6 @@
 .service {
     background-color: #d9ceff;
+    padding-bottom: 30px;
 }
 
 .service-img {
@@ -31,7 +32,7 @@
     z-index: 10;
     width: 90%;
     clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
-    padding: 5px;
+    padding: 5px 5px 10px 10px;
 }
 
 .description {
@@ -87,4 +88,23 @@
 
 .cssbuttons-io-button:active {
     box-shadow: 0 0.3em 1em -0.5em #843dff;
+}
+
+@media only screen and (max-width: 992px) {
+    .service-img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        position: relative;
+        opacity: 0.9;
+        z-index: 1;
+    }
+
+    .service-container {
+        background-color: white;
+        width: 280px;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: all 0.4s;
+    }
 }

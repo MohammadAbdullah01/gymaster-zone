@@ -8,7 +8,7 @@ import CustomLink from '../CustomLink/CustomLink';
 const Header = () => {
     return (
         <>
-            <Navbar className='navbar-container' collapseOnSelect expand="lg" variant='dark'>
+            <Navbar className='navbar-container sticky-top' collapseOnSelect expand="lg" variant='dark'>
                 <Container>
                     <Link to='/' className='me-3'>
                         <img height="50px" src={title} alt="" />
