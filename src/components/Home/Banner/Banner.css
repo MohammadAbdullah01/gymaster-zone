@@ -1,4 +1,64 @@
+.banner-container {
+    background-color: #D9CEFF;
+}
+
 .banner-img {
-    height: calc(100vh - 66px);
-    object-fit: cover;
+    width: 100%;
+    padding: 30px;
+}
+
+.banner-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.quotee-container {
+    background-color: #4b05ad;
+    clip-path: polygon(41% 0, 100% 0, 100% 75%, 62% 100%, 0 98%, 0 29%);
+    padding: 20px;
+    height: 280px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s;
+}
+
+.quotee-container:hover {
+    transform: scale(1.1);
+}
+
+.quotee {
+    font-size: 40px;
+    color: #FE3316;
+    text-shadow: 1px 1px 1px #FFF;
+}
+
+.stroked {
+    color: white;
+    text-shadow: 1px 1px 1px #FE3316;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .quotee-container {
+        background-color: #4b05ad;
+        clip-path: polygon(41% 0, 100% 0, 100% 75%, 62% 100%, 0 98%, 0 29%);
+        padding: 20px;
+        height: 200px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quotee {
+        font-size: 30px;
+        color: #FE3316;
+    }
 }
