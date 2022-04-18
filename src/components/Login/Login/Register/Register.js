@@ -3,10 +3,11 @@ import google from '../../../../images/socialLogo/google.png'
 import github from '../../../../images/socialLogo/github.png'
 import facebook from '../../../../images/socialLogo/facebook.png'
 import { Link } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../../Firebase/firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Spinner } from 'react-bootstrap';
 
 const Register = () => {
     const [userInfo, setUserInfo] = useState({ email: "", password: "", confirmPassword: "" })
@@ -47,7 +48,7 @@ const Register = () => {
         user,
         loading,
         hookError,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const handleSubmit = event => {
         event.preventDefault()
         if (userInfo.password !== userInfo.confirmPassword) {
@@ -55,16 +56,34 @@ const Register = () => {
         }
         createUserWithEmailAndPassword(userInfo.email, userInfo.password)
     }
+
+    const [signInWithGoogle, user1, loading1, hookError1] = useSignInWithGoogle(auth);
+    const handleGoogleSignIn = () => {
+        signInWithGoogle();
+    }
+    const [signInWithGithub, user2, loading2, hookError2] = useSignInWithGithub(auth);
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+    }
+    const [signInWithFacebook, user3, loading3, hookError3] = useSignInWithFacebook(auth);
+    const handleFacebookLogIn = () => {
+        signInWithFacebook()
+    }
     useEffect(() => {
-        if (user) {
+        if (user || user1 || user2 || user3) {
             toast.success("user created")
         }
-    }, [user])
+    }, [user, user1, user2, user3])
     useEffect(() => {
-        if (hookError) {
+        if (hookError || hookError1 || hookError2 || hookError3) {
             toast.error("something went wrong", { id: "1" })
         }
-    }, [hookError])
+    }, [hookError, hookError1, hookError2, hookError3])
+    useEffect(() => {
+        if (user) {
+            toast.success("verification email sent")
+        }
+    }, [user])
     return (
         <>
             <div className='login-container'>
@@ -77,7 +96,8 @@ const Register = () => {
                         {error.passwordError && <p className='text-danger'>{error.passwordError}</p>}
                         <input onChange={handleConfirmPasswordInput} placeholder='confirm password' type="password" name="confirmPassword" id="confirmPassword" required />
                         {error.confirmPasswordError && <p className='text-danger'>{error.confirmPasswordError}</p>}
-                        <input className='submit-btn' type="submit" value='login' />
+                        {(loading || loading1 || loading2 || loading3) && <p className='text-center'><Spinner animation="border" variant="success" /></p>}
+                        <input className='submit-btn' type="submit" value='Register' />
                     </form>
                     <p style={{ color: "#523B3B" }} className='mt-1'>Already have an account? <Link style={{ textDecoration: "none" }} to='/login'>Please Login</Link></p>
                     <div className='form-or-container'>
@@ -86,9 +106,9 @@ const Register = () => {
                         <div className='form-or'></div>
                     </div>
                     <div>
-                        <button className='social-btn'><img src={google} alt="" /><span>Continue with google</span></button>
-                        <button className='social-btn'><img src={github} alt="" /><span>Continue with github</span></button>
-                        <button className='social-btn'><img src={facebook} alt="" /><span>Continue with facebook</span></button>
+                        <button onClick={handleGoogleSignIn} className='social-btn'><img src={google} alt="" /><span>Continue with google</span></button>
+                        <button onClick={handleGithubSignIn} className='social-btn'><img src={github} alt="" /><span>Continue with github</span></button>
+                        <button onClick={handleFacebookLogIn} className='social-btn'><img src={facebook} alt="" /><span>Continue with facebook</span></button>
                     </div>
                 </div>
             </div>
