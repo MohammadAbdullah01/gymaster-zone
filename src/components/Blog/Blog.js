@@ -8,7 +8,7 @@ const Blog = () => {
             <Container>
                 <div className='question-container'>
                     <Row>
-                        <Col lg={6}>
+                        <Col lg={8}>
                             <div className='answering-sec'>
                                 <h1>What is the difference between authorization and authentication?</h1>
                                 <p>Authentication is verifying someone who is accessing my application where authorization is giving her more facilities or extra curriculam to do in the application. So in a word authentication and authorization is not same. Authentication is used to be confirmed that the user is really are who they are representing themselves. After confirming the authentication, authorization is used to give him permission of different levels of information and actions to do. Authentication is the first steop of identity and then authorization is applied to take place.</p>
@@ -18,7 +18,7 @@ const Blog = () => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col lg={6}>
+                        <Col lg={8}>
                             <div className='answering-sec'>
                                 <h1>Why are you using firebase? What other options do you have to implement authentication?</h1>
                                 <p>
@@ -30,7 +30,7 @@ const Blog = () => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col lg={6}>
+                        <Col lg={8}>
                             <div className='answering-sec'>
                                 <h1> What other services does firebase provide other than authentication?</h1>
                                 <p>
