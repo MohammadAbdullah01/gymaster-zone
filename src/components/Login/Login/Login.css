@@ -58,7 +58,7 @@
 
 .social-btn {
     width: 100%;
-    height: 50px;
+    height: 40px;
     border: 0;
     background-color: #843dff;
     color: white;
@@ -83,4 +83,20 @@
     .login-container {
         width: 30%;
     }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-btn {
+        width: 100%;
+        height: 50px;
+        border: 0;
+        background-color: #843dff;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
 }

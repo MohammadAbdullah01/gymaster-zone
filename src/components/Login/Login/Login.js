@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import google from '../../../images/socialLogo/google.png'
 import github from '../../../images/socialLogo/github.png'
 import facebook from '../../../images/socialLogo/facebook.png'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle, useUpdatePassword } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 import { Spinner } from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 const Login = () => {
+    const location = useLocation()
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathname || "/";
     const [userInfo, setUserInfo] = useState({ email: "", password: "" })
     const [error, setError] = useState({ emailError: "", passwordError: "" })
     const handleEmailInput = event => {
@@ -58,11 +61,24 @@ const Login = () => {
     const handleFacebookLogIn = () => {
         signInWithFacebook()
     }
+    const [sendPasswordResetEmail, sending, error4] = useSendPasswordResetEmail(
+        auth
+    );
+
+    const handleResetPassword = async () => {
+        if (userInfo.email) {
+            await sendPasswordResetEmail(userInfo.email)
+            toast.success("reset password email sent")
+        } else {
+            toast.error("please give an email address")
+        }
+    }
     useEffect(() => {
         if (user || user1 || user2 || user3) {
             toast.success("Sign in successful")
+            navigate(from, { replace: true });
         }
-    }, [user, user1, user2, user3])
+    }, [user, user1, user2, user3, from, navigate])
     useEffect(() => {
         if (hookError || hookError1 || hookError2 || hookError3) {
             toast.error("something went wrong", { id: "1" })
@@ -82,6 +98,7 @@ const Login = () => {
                         <input className='submit-btn' type="submit" value='Login' />
                     </form>
                     <p style={{ color: "#523B3B" }} className='mt-1'>New at Gymaster ? <Link style={{ textDecoration: "none" }} to='/register'>Please Register</Link></p>
+                    <p style={{ color: "#523B3B" }} className='mt-1'>Forgot Password? <span onClick={handleResetPassword} className='text-primary' style={{ cursor: "pointer" }} >Reset Password</span></p>
                     <div className='form-or-container'>
                         <div className='form-or'></div>
                         <span className='mx-2'>OR</span>

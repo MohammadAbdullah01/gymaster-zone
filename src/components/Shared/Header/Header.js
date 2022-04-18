@@ -4,8 +4,15 @@ import './Header.css'
 import title from '../../../images/title.png'
 import { Link } from 'react-router-dom';
 import CustomLink from '../CustomLink/CustomLink';
+import auth from '../../../Firebase/firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const handleLogOut = () => {
+        signOut(auth);
+    }
     return (
         <>
             <Navbar className='navbar-container sticky-top' collapseOnSelect expand="lg" variant='dark'>
@@ -21,7 +28,7 @@ const Header = () => {
                             <CustomLink to='/about'>About</CustomLink>
                         </Nav>
                         <Nav>
-                            <CustomLink to='/login'>Login</CustomLink>
+                            {user ? <button onClick={handleLogOut} className='logout-btn'>Log out</button> : <CustomLink to='/login'>Login</CustomLink>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
