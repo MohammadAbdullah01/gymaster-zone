@@ -1,6 +1,7 @@
 .login-container {
     width: 70%;
-    margin: 10px auto;
+    margin: 0 auto;
+    padding: 10px 0;
     min-height: 78vh;
 }
 

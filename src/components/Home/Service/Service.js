@@ -10,7 +10,7 @@ const Service = ({ service }) => {
     useEffect(() => {
         Aos.init()
     }, [])
-    const { title, img, price, description } = service || {};
+    const { title, img, price, description, id } = service || {};
     return (
         <Col sm={12} lg={4} md={6} className="mb-3" data-aos="zoom-in-up">
             <div className=' service-container mx-auto' style={{ position: "relative" }}>

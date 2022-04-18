@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import google from '../../../../images/socialLogo/google.png'
 import github from '../../../../images/socialLogo/github.png'
 import facebook from '../../../../images/socialLogo/facebook.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../../Firebase/firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
@@ -79,9 +79,13 @@ const Register = () => {
             toast.error("something went wrong", { id: "1" })
         }
     }, [hookError, hookError1, hookError2, hookError3])
+    const location = useLocation()
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathname || "/";
     useEffect(() => {
         if (user) {
             toast.success("verification email sent")
+            navigate(from, { replace: true });
         }
     }, [user])
     return (

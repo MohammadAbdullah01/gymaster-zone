@@ -1,0 +1,20 @@
+.about-container {
+    text-align: center;
+    background-color: #D9CEFF;
+    padding-top: 10px;
+    margin-bottom: -16px;
+    min-height: 84vh;
+}
+
+.developer-img {
+    border-radius: 50%;
+    width: 20%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .developer-img {
+        border-radius: 45%;
+        width: 50%;
+    }
+}
