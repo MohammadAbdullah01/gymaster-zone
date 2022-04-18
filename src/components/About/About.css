@@ -8,13 +8,12 @@
 
 .developer-img {
     border-radius: 50%;
-    width: 20%;
+    width: 30%;
 }
 
 
 @media only screen and (max-width: 600px) {
     .developer-img {
-        border-radius: 45%;
         width: 50%;
     }
 }

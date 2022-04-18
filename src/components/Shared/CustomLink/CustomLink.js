@@ -9,7 +9,7 @@ function CustomLink({ children, to, ...props }) {
     return (
         <div>
             <Link className={`link ${match ? "active-link" : "not-active"}`}
-                style={{ borderRadius: '2px', fontSize: "18px", marginLeft: "15px", textDecoration: "none", fontWeight: "500" }}
+                style={{ borderRadius: '2px', fontSize: "18px", textDecoration: "none", fontWeight: "500" }}
                 to={to}
                 {...props}
             >

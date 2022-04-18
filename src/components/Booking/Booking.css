@@ -1,0 +1,63 @@
+.booking-container {
+    margin: 50px 0;
+}
+
+.booking-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booking-service {
+    position: relative;
+    height: 472px;
+}
+
+.title-price {
+    background-color: #8d70c4a8;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 66%, 48% 100%, 0 100%, 0% 50%);
+
+}
+
+.title-price h1 {
+    font-size: 30px;
+}
+
+.title-price h2 {
+    font-size: 22px;
+}
+
+.booking-description {
+    background-color: rgba(128, 128, 128, 0.829);
+    color: white;
+    width: 90%;
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+    padding: 20px;
+}
+
+.book-now-title {
+    text-align: center;
+    color: rgb(66, 60, 60);
+    font-weight: 700;
+}
+
+.booking-form-text {
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 991px) {
+    .booking-container {
+        margin-top: 10px;
+    }
+
+    .booking-form {
+        margin-top: 20px;
+    }
+}

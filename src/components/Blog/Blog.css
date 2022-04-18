@@ -1,0 +1,28 @@
+.blog-container {
+    background-image: url('../../images/Others/question.jpg');
+    min-height: 70vh;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 15px;
+}
+
+.answering-sec {
+    box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    padding: 25px 12px;
+    background-color: #faf3f2b9;
+    margin-bottom: 15px;
+    border-radius: 10px 0 0 0;
+}
+
+.answering-sec h1 {
+    font-size: 25px;
+}
+
+.answering-sec p {
+    text-align: justify;
+    line-height: 26px;
+}

@@ -6,13 +6,22 @@
 
 .logout-btn {
     border: 0;
-    width: 80px;
+    width: 90px;
     border-radius: 5px;
     font-weight: 500;
-    color: #843dff
+    color: #843dff;
+    padding: 8px 12px;
 }
 
 .logout-btn:hover {
     color: white;
     background-color: #8e60dd;
+}
+
+@media only screen and (max-width: 991px) {
+    .logout-btn {
+        margin-top: 10px;
+        margin-left: 15px;
+        padding: 5px;
+    }
 }

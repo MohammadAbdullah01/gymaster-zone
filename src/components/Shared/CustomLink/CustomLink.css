@@ -1,6 +1,10 @@
 .active-link {
-    border-bottom: 3px solid white;
+    border-bottom: 2px solid white;
     color: white;
+}
+
+.link {
+    margin-left: 15px;
 }
 
 .link:hover {
